@@ -20,3 +20,5 @@ def log_booking(booking_data: dict) -> None:
     """
 
     os.makedirs(DATABASE_FOLDER, exist_ok=True)
+
+    booking_data["timestamp"] = datetime.now().isoformat()
