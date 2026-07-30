@@ -43,7 +43,7 @@
             Book labs, classrooms and campus resources without conflicts.
         </p>
 
-        <button>Book Now</button>
+        <button class="hero-book-btn">Book Now</button>
 
     </section>
 
@@ -122,11 +122,61 @@
     </section>
 
     <!-- =========================
+         Booking Modal
+    ========================== -->
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <h2>Book Resource</h2>
+
+            <form id="bookingForm">
+
+                <label>Student ID</label>
+                <input type="text" placeholder="Enter Student ID" required>
+
+                <label>Resource</label>
+
+                <select required>
+                    <option>Lab 101</option>
+                    <option>Lab 102</option>
+                    <option>Classroom A</option>
+                    <option>Seminar Hall</option>
+                </select>
+
+                <label>Date</label>
+                <input type="date" required>
+
+                <label>Time Slot</label>
+
+                <select required>
+                    <option>09:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>12:00 PM</option>
+                </select>
+
+                <button type="submit" class="submit-btn">
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
          Footer
     ========================== -->
 
     <footer>
+
         <p>&copy; 2026 Team GRAMBYTE | SyncReserve AI</p>
+
     </footer>
 
     <script src="js/script.js"></script>
