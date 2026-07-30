@@ -14,8 +14,8 @@ def process_booking(booking: BookingRequest) -> dict:
 
     response = run_cpp_engine(
         booking.resource_id,
-        booking.start_time.isoformat(),
-        booking.end_time.isoformat()
+        booking.start_time,
+        booking.end_time
     )
 
     latency = round((time.perf_counter() - start) * 1000, 2)
