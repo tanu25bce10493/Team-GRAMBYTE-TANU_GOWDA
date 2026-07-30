@@ -35,3 +35,24 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
             text=True,
             timeout=1
         )
+
+         # Convert JSON output from C++ into a Python dictionary
+        return json.loads(result.stdout)
+
+    except subprocess.TimeoutExpired:
+        return {
+            "status": 504,
+            "message": "C++ engine execution timed out."
+        }
+
+    except json.JSONDecodeError:
+        return {
+            "status": 500,
+            "message": "Invalid JSON returned by C++ engine."
+        }
+
+    except Exception as e:
+        return {
+            "status": 500,
+            "message": str(e)
+        }
