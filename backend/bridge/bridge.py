@@ -11,21 +11,25 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
     Executes the C++ scheduling engine and returns its response.
     """
 
-    cpp_engine_path = os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "cpp",
-        "graph_engine.exe"
+    cpp_engine_path = os.path.abspath(
+        os.path.join(
+            os.path.dirname(__file__),
+            "..",
+            "cpp",
+            "build",
+            "SyncReserveAI.exe"
+        )
     )
 
     if not os.path.exists(cpp_engine_path):
         return {
+            "success": False,
             "status": 500,
-            "message": "C++ engine executable not found."
+            "message": f"C++ engine executable not found: {cpp_engine_path}"
         }
 
     try:
-        # Execute the C++ engine
+
         result = subprocess.run(
             [
                 cpp_engine_path,
@@ -35,14 +39,20 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
             ],
             capture_output=True,
             text=True,
-            timeout=1
+            timeout=3
         )
 
-        # Convert JSON output from C++ into a Python dictionary
+        if result.returncode != 0:
+            return {
+                "success": False,
+                "status": 500,
+                "message": result.stderr.strip() or "C++ engine failed."
+            }
+
         response = json.loads(result.stdout)
 
-        # Log only successful bookings
-        if response.get("status") == 200:
+        if response.get("success"):
+
             log_booking({
                 "resource_id": resource_id,
                 "start_time": start_time,
@@ -53,18 +63,21 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
 
     except subprocess.TimeoutExpired:
         return {
+            "success": False,
             "status": 504,
             "message": "C++ engine execution timed out."
         }
 
     except json.JSONDecodeError:
         return {
+            "success": False,
             "status": 500,
             "message": "Invalid JSON returned by C++ engine."
         }
 
     except Exception as e:
         return {
+            "success": False,
             "status": 500,
             "message": str(e)
         }

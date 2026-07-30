@@ -1,17 +1,33 @@
+import time
+
 from backend.api.schemas import BookingRequest
+from backend.bridge.bridge import run_cpp_engine
 
 
 def process_booking(booking: BookingRequest) -> dict:
     """
-    Temporary bridge implementation.
-
-    This function will later be replaced by the real
-    Python-to-C++ bridge developed by Member 4.
+    Sends the booking request to the Python bridge,
+    which invokes the C++ scheduling engine.
     """
 
-    return {
-        "success": True,
-        "status": 200,
-        "message": "Slot is available",
-        "latency_ms": 0.14
-    }
+    start = time.perf_counter()
+
+    response = run_cpp_engine(
+        booking.resource_id,
+        booking.start_time,
+        booking.end_time
+    )
+
+    latency = round((time.perf_counter() - start) * 1000, 2)
+
+    response["latency_ms"] = latency
+
+    if response.get("success"):
+        response["booking"] = {
+            "student_id": booking.student_id,
+            "resource_id": booking.resource_id,
+            "start_time": booking.start_time,
+            "end_time": booking.end_time,
+        }
+
+    return response

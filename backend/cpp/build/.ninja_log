@@ -1,0 +1,6 @@
+# ninja log v7
+69	325	8071466321657684	CMakeFiles/SyncReserveAI.dir/src/Resource.cpp.obj	7255f67756113035
+74	327	8071466321700144	CMakeFiles/SyncReserveAI.dir/src/Booking.cpp.obj	14d752898031d0a0
+62	441	8071466321578755	CMakeFiles/SyncReserveAI.dir/src/main.cpp.obj	62bcf9fd4b9ae702
+83	442	8071466321736586	CMakeFiles/SyncReserveAI.dir/src/GraphEngine.cpp.obj	e3c4c50e4d688476
+442	564	8071466325378046	SyncReserveAI.exe	71a83fd776417d28
