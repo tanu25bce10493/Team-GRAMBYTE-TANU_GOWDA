@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SyncReserve AI | Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>SyncReserve AI</h1>
+
+        <p>Admin Dashboard</p>
+
+    </header>
+
+    <!-- MAIN LAYOUT -->
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+            <h2>Menu</h2>
+
+            <ul>
+
+                <li>Dashboard</li>
+
+                <li>Bookings</li>
+
+                <li>Resources</li>
+
+                <li>Waitlist</li>
+
+                <li>Analytics</li>
+
+                <li>Settings</li>
+
+            </ul>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main>
+
+            <section>
+
+                <h2>Dashboard Overview</h2>
+
+                <p>
+                    Welcome Admin! Monitor campus resources,
+                    bookings and system performance here.
+                </p>
+
+            </section>
+
+            <section>
+
+    <h2>Dashboard Statistics</h2>
+
+    <div class="stats-grid">
+
+        <div class="card available">
+
+            <h3>Available Rooms</h3>
+
+            <h1>32</h1>
+
+            <p>Ready for Booking</p>
+
+        </div>
+
+        <div class="card occupied">
+
+            <h3>Occupied Rooms</h3>
+
+            <h1>18</h1>
+
+            <p>Currently In Use</p>
+
+        </div>
+
+        <div class="card pending">
+
+            <h3>Pending Requests</h3>
+
+            <h1>11</h1>
+
+            <p>Waiting Approval</p>
+
+        </div>
+
+        <div class="card bookings">
+
+            <h3>Today's Bookings</h3>
+
+            <h1>64</h1>
+
+            <p>Total Reservations</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+          <section>
+
+    <h2>Recent Bookings</h2>
+
+    <table class="booking-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Student</th>
+
+                <th>Resource</th>
+
+                <th>Time Slot</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>Ansh Tomar</td>
+
+                <td>Lab 102</td>
+
+                <td>09:00 - 10:00</td>
+
+                <td><span class="status confirmed">Confirmed</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Rahul Sharma</td>
+
+                <td>Projector B</td>
+
+                <td>10:00 - 11:00</td>
+
+                <td><span class="status pending">Pending</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Priya Singh</td>
+
+                <td>Seminar Hall</td>
+
+                <td>11:00 - 12:00</td>
+
+                <td><span class="status rejected">Rejected</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Rohan Gupta</td>
+
+                <td>Computer Lab</td>
+
+                <td>01:00 - 02:00</td>
+
+                <td><span class="status confirmed">Confirmed</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Sneha Verma</td>
+
+                <td>Conference Room</td>
+
+                <td>03:00 - 04:00</td>
+
+                <td><span class="status pending">Pending</span></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+        </main>
+
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
