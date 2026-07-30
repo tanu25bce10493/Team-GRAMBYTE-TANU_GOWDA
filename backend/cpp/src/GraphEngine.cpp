@@ -8,4 +8,4 @@ void GraphEngine::addResource(const Resource& resource)
 void GraphEngine::addBooking(const Booking& booking)
 {
     bookings.push_back(booking);
-}
+} 
