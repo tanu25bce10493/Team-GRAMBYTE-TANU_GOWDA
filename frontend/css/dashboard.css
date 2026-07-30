@@ -352,3 +352,46 @@ section p {
     background: #dc2626;
 
 }
+/* ===========================
+   Toast Notification
+=========================== */
+
+.toast {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    background: #1f2937;
+
+    color: white;
+
+    padding: 15px 22px;
+
+    border-radius: 8px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateX(100%);
+
+    transition: all 0.3s ease;
+
+    z-index: 1000;
+
+}
+
+.toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(0);
+
+}
