@@ -18,18 +18,17 @@ bool GraphEngine::isResourceAvailable(
 {
     for (const Booking& booking : bookings)
     {
-        // Skip bookings for other resources
         if (booking.resourceId != resourceId)
         {
             continue;
         }
 
-        // Check for time overlap
-        bool overlap =
-            (startTime < booking.endTime) &&
-            (endTime > booking.startTime);
-
-        if (overlap)
+        // Time intervals overlap if:
+        // requestedStart < existingEnd
+        // AND
+        // requestedEnd > existingStart
+        if (startTime < booking.endTime &&
+            endTime > booking.startTime)
         {
             return false;
         }
