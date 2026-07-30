@@ -15,3 +15,9 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
         "cpp",
         "graph_engine.exe"
     )
+
+    if not os.path.exists(cpp_engine_path):
+            return {
+                "status": 500,
+                "message": "C++ engine executable not found."
+            }
