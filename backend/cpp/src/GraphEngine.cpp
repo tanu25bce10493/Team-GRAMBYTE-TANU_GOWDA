@@ -32,7 +32,8 @@ bool GraphEngine::isResourceAvailable(
             continue;
         }
 
-        // Time intervals overlap if:
+        // Two bookings conflict if the requested booking starts
+        // before an existing booking ends AND ends after it starts.
         // requestedStart < existingEnd
         // AND
         // requestedEnd > existingStart
