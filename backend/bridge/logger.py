@@ -14,6 +14,7 @@ JOURNAL_FILE = os.path.join(
     "journal.json"
 )
 
+
 def log_booking(booking_data: dict) -> None:
     """
     Save one booking into the journal file.

@@ -3,6 +3,8 @@ import json
 import os
 from typing import Dict, Any
 
+from .logger import log_booking
+
 
 def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str, Any]:
     """
@@ -17,10 +19,10 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
     )
 
     if not os.path.exists(cpp_engine_path):
-            return {
-                "status": 500,
-                "message": "C++ engine executable not found."
-            }
+        return {
+            "status": 500,
+            "message": "C++ engine executable not found."
+        }
 
     try:
         # Execute the C++ engine
@@ -36,8 +38,18 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
             timeout=1
         )
 
-         # Convert JSON output from C++ into a Python dictionary
-        return json.loads(result.stdout)
+        # Convert JSON output from C++ into a Python dictionary
+        response = json.loads(result.stdout)
+
+        # Log only successful bookings
+        if response.get("status") == 200:
+            log_booking({
+                "resource_id": resource_id,
+                "start_time": start_time,
+                "end_time": end_time
+            })
+
+        return response
 
     except subprocess.TimeoutExpired:
         return {
