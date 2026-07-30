@@ -11,14 +11,13 @@ from backend.api.exceptions import (
     generic_exception_handler,
 )
 
-import traceback
-
 app = FastAPI(
     title="SyncReserve AI API",
     description="Backend API for the SyncReserve AI project.",
     version="1.0.0",
 )
 
+# Register exception handlers
 app.add_exception_handler(
     BookingException,
     booking_exception_handler,
@@ -29,6 +28,7 @@ app.add_exception_handler(
     generic_exception_handler,
 )
 
+# CORS Configuration
 origins = [
     "http://localhost:5500",
     "http://127.0.0.1:5500",
@@ -69,32 +69,17 @@ def health_check():
 )
 def create_booking(booking: BookingRequest):
 
-    print("=" * 60)
-    print("BOOKING REQUEST RECEIVED")
-    print(booking)
-
     try:
-        print("Calling book_resource()...")
-
         result = book_resource(booking)
 
-        print("book_resource() returned:")
-        print(result)
-
     except BookingException:
-        print("BookingException raised")
-        traceback.print_exc()
         raise
 
-    except Exception as e:
-        print("Unexpected exception:")
-        traceback.print_exc()
+    except Exception:
         raise BookingException(
-            str(e),
+            "Unable to process booking request.",
             500,
         )
-
-    print("Returning BookingResponse")
 
     return BookingResponse(
         success=result["success"],

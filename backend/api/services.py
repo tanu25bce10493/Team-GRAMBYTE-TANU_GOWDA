@@ -11,19 +11,29 @@ def book_resource(booking: BookingRequest) -> dict:
     the request to the bridge layer.
     """
 
-    start = datetime.fromisoformat(booking.start_time)
-    end = datetime.fromisoformat(booking.end_time)
+    # Validate datetime format
+    try:
+        start = datetime.fromisoformat(booking.start_time)
+        end = datetime.fromisoformat(booking.end_time)
+    except ValueError:
+        raise BookingException(
+            "Invalid date/time format. Please use ISO 8601 format (YYYY-MM-DDTHH:MM:SS).",
+            400,
+        )
 
+    # Validate booking time
     if start >= end:
         raise BookingException(
             "End time must be later than start time.",
             400,
         )
 
+    # Maximum booking duration
     if end - start > timedelta(hours=4):
         raise BookingException(
             "Maximum booking duration is 4 hours.",
             400,
         )
 
+    # Forward request to bridge layer
     return process_booking(booking)
