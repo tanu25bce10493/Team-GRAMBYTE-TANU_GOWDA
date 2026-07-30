@@ -15,6 +15,7 @@ def book_resource(booking: BookingRequest) -> dict:
     try:
         start = datetime.fromisoformat(booking.start_time)
         end = datetime.fromisoformat(booking.end_time)
+
     except ValueError:
         raise BookingException(
             "Invalid date/time format. Please use ISO 8601 format (YYYY-MM-DDTHH:MM:SS).",
@@ -36,4 +37,15 @@ def book_resource(booking: BookingRequest) -> dict:
         )
 
     # Forward request to bridge layer
-    return process_booking(booking)
+    try:
+        return process_booking(booking)
+
+    except Exception as e:
+        import traceback
+
+        traceback.print_exc()
+
+        raise BookingException(
+            str(e),
+            500,
+        )
