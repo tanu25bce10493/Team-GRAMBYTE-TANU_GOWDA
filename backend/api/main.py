@@ -3,18 +3,18 @@ from datetime import datetime
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from backend.api.schemas import BookingRequest
+
 app = FastAPI(
     title="SyncReserve AI API",
     description="Backend API for the SyncReserve AI project.",
     version="1.0.0",
 )
 
-# CORS Configuration
-# During development we allow the local frontend servers.
 origins = [
-    "http://localhost:5500",  # VS Code Live Server
+    "http://localhost:5500",
     "http://127.0.0.1:5500",
-    "http://localhost:3000",  # Optional
+    "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
 
@@ -41,4 +41,16 @@ def health_check():
         "service": "SyncReserve AI API",
         "version": "1.0.0",
         "timestamp": datetime.utcnow().isoformat() + "Z",
+    }
+
+
+@app.post("/api/book")
+def create_booking(booking: BookingRequest):
+    """
+    Temporary endpoint.
+    The bridge integration will be added in a later commit.
+    """
+    return {
+        "message": "Booking request received",
+        "data": booking.model_dump()
     }
