@@ -184,3 +184,78 @@ section p {
     background: #2563eb;
 
 }
+/* ===========================
+   Booking Table
+=========================== */
+
+.booking-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+.booking-table th {
+
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+}
+
+.booking-table td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+.booking-table tr:hover {
+
+    background: #f9fafb;
+
+}
+
+/* ===========================
+   Status Badges
+=========================== */
+
+.status {
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+.confirmed {
+
+    background: #10b981;
+
+}
+
+.pending {
+
+    background: #f59e0b;
+
+}
+
+.rejected {
+
+    background: #ef4444;
+
+}
