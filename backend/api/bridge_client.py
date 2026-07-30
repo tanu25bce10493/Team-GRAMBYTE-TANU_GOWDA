@@ -3,15 +3,22 @@ from backend.api.schemas import BookingRequest
 
 def process_booking(booking: BookingRequest) -> dict:
     """
-    Temporary bridge implementation.
+    Temporary bridge wrapper.
 
-    This function will later be replaced by the real
-    Python-to-C++ bridge developed by Member 4.
+    Later this function will call the Python bridge
+    that communicates with the C++ scheduling engine.
+
+    For now, it simply returns a mock response using
+    the incoming booking request.
     """
 
     return {
         "success": True,
         "status": 200,
-        "message": "Slot is available",
-        "latency_ms": 0.14
+        "message": f"Booking confirmed for Resource {booking.resource_id}",
+        "latency_ms": 0.12,
+        "resource_id": booking.resource_id,
+        "booked_by": booking.booked_by,
+        "start_time": booking.start_time,
+        "end_time": booking.end_time,
     }
