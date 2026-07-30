@@ -18,3 +18,5 @@ def log_booking(booking_data: dict) -> None:
     """
     Save one booking into the journal file.
     """
+
+    os.makedirs(DATABASE_FOLDER, exist_ok=True)
