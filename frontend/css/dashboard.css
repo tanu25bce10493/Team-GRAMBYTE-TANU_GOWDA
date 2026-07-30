@@ -259,3 +259,96 @@ section p {
     background: #ef4444;
 
 }
+/* ===========================
+   Waitlist Table
+=========================== */
+
+.waitlist-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+.waitlist-table th {
+
+    background: #374151;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+}
+
+.waitlist-table td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+.waitlist-table tr:hover {
+
+    background: #f8fafc;
+
+}
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.approve-btn {
+
+    background: #10b981;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+
+    transition: 0.3s;
+
+}
+
+.approve-btn:hover {
+
+    background: #059669;
+
+}
+
+.reject-btn {
+
+    background: #ef4444;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.reject-btn:hover {
+
+    background: #dc2626;
+
+}
