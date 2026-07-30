@@ -72,19 +72,234 @@
 
             <section>
 
-                <h2>Statistics</h2>
+    <h2>Dashboard Statistics</h2>
 
-                <p>Statistics cards will be added here.</p>
+    <div class="stats-grid">
 
-            </section>
+        <div class="card available">
 
-            <section>
+            <h3>Available Rooms</h3>
 
-                <h2>Recent Bookings</h2>
+            <h1>32</h1>
 
-                <p>Booking table will be added here.</p>
+            <p>Ready for Booking</p>
 
-            </section>
+        </div>
+
+        <div class="card occupied">
+
+            <h3>Occupied Rooms</h3>
+
+            <h1>18</h1>
+
+            <p>Currently In Use</p>
+
+        </div>
+
+        <div class="card pending">
+
+            <h3>Pending Requests</h3>
+
+            <h1>11</h1>
+
+            <p>Waiting Approval</p>
+
+        </div>
+
+        <div class="card bookings">
+
+            <h3>Today's Bookings</h3>
+
+            <h1>64</h1>
+
+            <p>Total Reservations</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+          <section>
+
+    <h2>Recent Bookings</h2>
+
+    <table class="booking-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Student</th>
+
+                <th>Resource</th>
+
+                <th>Time Slot</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>Ansh Tomar</td>
+
+                <td>Lab 102</td>
+
+                <td>09:00 - 10:00</td>
+
+                <td><span class="status confirmed">Confirmed</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Rahul Sharma</td>
+
+                <td>Projector B</td>
+
+                <td>10:00 - 11:00</td>
+
+                <td><span class="status pending">Pending</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Priya Singh</td>
+
+                <td>Seminar Hall</td>
+
+                <td>11:00 - 12:00</td>
+
+                <td><span class="status rejected">Rejected</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Rohan Gupta</td>
+
+                <td>Computer Lab</td>
+
+                <td>01:00 - 02:00</td>
+
+                <td><span class="status confirmed">Confirmed</span></td>
+
+            </tr>
+
+            <tr>
+
+                <td>Sneha Verma</td>
+
+                <td>Conference Room</td>
+
+                <td>03:00 - 04:00</td>
+
+                <td><span class="status pending">Pending</span></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+<section>
+
+    <h2>Waitlist Management</h2>
+
+    <table class="waitlist-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Student</th>
+
+                <th>Requested Resource</th>
+
+                <th>Preferred Time</th>
+
+                <th>Priority</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>Aryan Mehta</td>
+
+                <td>AI Lab</td>
+
+                <td>09:00 - 10:00</td>
+
+                <td>High</td>
+
+                <td>
+
+                    <button class="approve-btn">Approve</button>
+
+                    <button class="reject-btn">Reject</button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>Neha Sharma</td>
+
+                <td>Projector A</td>
+
+                <td>11:00 - 12:00</td>
+
+                <td>Medium</td>
+
+                <td>
+
+                    <button class="approve-btn">Approve</button>
+
+                    <button class="reject-btn">Reject</button>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>Karan Verma</td>
+
+                <td>Seminar Hall</td>
+
+                <td>02:00 - 03:00</td>
+
+                <td>Low</td>
+
+                <td>
+
+                    <button class="approve-btn">Approve</button>
+
+                    <button class="reject-btn">Reject</button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
 
         </main>
 

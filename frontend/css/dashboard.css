@@ -103,3 +103,252 @@ section h2 {
 section p {
     line-height: 1.6;
 }
+/* ===========================
+   Statistics Cards
+=========================== */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+}
+
+.card {
+
+    color: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 15px;
+
+}
+
+.card h1 {
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+
+}
+
+.card p {
+
+    font-size: 14px;
+
+}
+
+.available {
+
+    background: #10b981;
+
+}
+
+.occupied {
+
+    background: #ef4444;
+
+}
+
+.pending {
+
+    background: #f59e0b;
+
+}
+
+.bookings {
+
+    background: #2563eb;
+
+}
+/* ===========================
+   Booking Table
+=========================== */
+
+.booking-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+.booking-table th {
+
+    background: #1e3a8a;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+}
+
+.booking-table td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+.booking-table tr:hover {
+
+    background: #f9fafb;
+
+}
+
+/* ===========================
+   Status Badges
+=========================== */
+
+.status {
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+}
+
+.confirmed {
+
+    background: #10b981;
+
+}
+
+.pending {
+
+    background: #f59e0b;
+
+}
+
+.rejected {
+
+    background: #ef4444;
+
+}
+/* ===========================
+   Waitlist Table
+=========================== */
+
+.waitlist-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+}
+
+.waitlist-table th {
+
+    background: #374151;
+
+    color: white;
+
+    padding: 15px;
+
+    text-align: left;
+
+}
+
+.waitlist-table td {
+
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+}
+
+.waitlist-table tr:hover {
+
+    background: #f8fafc;
+
+}
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.approve-btn {
+
+    background: #10b981;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+
+    transition: 0.3s;
+
+}
+
+.approve-btn:hover {
+
+    background: #059669;
+
+}
+
+.reject-btn {
+
+    background: #ef4444;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+.reject-btn:hover {
+
+    background: #dc2626;
+
+}
