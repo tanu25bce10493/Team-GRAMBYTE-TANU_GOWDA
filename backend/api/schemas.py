@@ -6,3 +6,10 @@ class BookingRequest(BaseModel):
     resource_id: str = Field(..., min_length=1)
     start_time: str
     end_time: str
+
+
+class BookingResponse(BaseModel):
+    success: bool
+    status: int
+    message: str
+    booking: BookingRequest
