@@ -22,3 +22,7 @@ def log_booking(booking_data: dict) -> None:
     os.makedirs(DATABASE_FOLDER, exist_ok=True)
 
     booking_data["timestamp"] = datetime.now().isoformat()
+
+    with open(JOURNAL_FILE, "a", encoding="utf-8") as file:
+        json.dump(booking_data, file)
+        file.write("\n")
