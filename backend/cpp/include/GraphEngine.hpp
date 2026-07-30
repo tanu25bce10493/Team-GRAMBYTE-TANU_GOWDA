@@ -21,7 +21,6 @@ public:
         const std::string& startTime,
         const std::string& endTime
     ) const;
-    const Resource* getResourceById(int resourceId) const;
 };
 
 #endif
