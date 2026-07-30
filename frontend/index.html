@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncReserve AI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         Navbar
+    ========================== -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>SyncReserve AI</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- =========================
+         Hero Section
+    ========================== -->
+
+    <section class="hero">
+
+        <h1>Smart Campus Resource Booking</h1>
+
+        <p>
+            Book labs, classrooms and campus resources without conflicts.
+        </p>
+
+        <button class="hero-book-btn">Book Now</button>
+
+    </section>
+
+    <!-- =========================
+         Booking Section
+    ========================== -->
+
+    <section class="booking">
+
+        <h2>Book a Resource</h2>
+
+        <div class="booking-grid">
+
+            <div class="grid-header">Resource</div>
+            <div class="grid-header">9:00 AM</div>
+            <div class="grid-header">10:00 AM</div>
+            <div class="grid-header">11:00 AM</div>
+            <div class="grid-header">12:00 PM</div>
+
+            <div class="resource-name">Lab 101</div>
+            <div class="slot available">Available</div>
+            <div class="slot booked">Booked</div>
+            <div class="slot available">Available</div>
+            <div class="slot available">Available</div>
+
+            <div class="resource-name">Classroom A</div>
+            <div class="slot available">Available</div>
+            <div class="slot available">Available</div>
+            <div class="slot booked">Booked</div>
+            <div class="slot available">Available</div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         Resources Section
+    ========================== -->
+
+    <section class="resources">
+
+        <h2>Available Resources</h2>
+
+        <div class="resource-container">
+
+            <div class="resource-card">
+                <h3>Lab 101</h3>
+                <p>Capacity: 40</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Lab 102</h3>
+                <p>Capacity: 30</p>
+                <p>Status: <span class="booked-text">Booked</span></p>
+                <button class="book-btn" disabled>Booked</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Classroom A</h3>
+                <p>Capacity: 60</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Seminar Hall</h3>
+                <p>Capacity: 120</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         Booking Modal
+    ========================== -->
+
+    <div id="bookingModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <h2>Book Resource</h2>
+
+            <form id="bookingForm">
+
+                <label>Student ID</label>
+                <input type="text" placeholder="Enter Student ID" required>
+
+                <label>Resource</label>
+
+                <select required>
+                    <option>Lab 101</option>
+                    <option>Lab 102</option>
+                    <option>Classroom A</option>
+                    <option>Seminar Hall</option>
+                </select>
+
+                <label>Date</label>
+                <input type="date" required>
+
+                <label>Time Slot</label>
+
+                <select required>
+                    <option>09:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>12:00 PM</option>
+                </select>
+
+                <button type="submit" class="submit-btn">
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        <p>&copy; 2026 Team GRAMBYTE | SyncReserve AI</p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
