@@ -7,7 +7,7 @@ struct Booking
 {
     int bookingId;
     int resourceId;
-    std::string userId;
+    std::string bookedBy;
 
     std::string startTime;
     std::string endTime;
