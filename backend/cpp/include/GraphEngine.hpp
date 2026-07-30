@@ -2,7 +2,7 @@
 #define GRAPH_ENGINE_HPP
 
 #include <vector>
-
+#include <string>
 #include "Resource.hpp"
 #include "Booking.hpp"
 
@@ -15,6 +15,12 @@ private:
 public:
     void addResource(const Resource& resource);
     void addBooking(const Booking& booking);
+
+    bool isResourceAvailable(
+        int resourceId,
+        const std::string& startTime,
+        const std::string& endTime
+    ) const;
 };
 
 #endif
