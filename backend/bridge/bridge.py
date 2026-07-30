@@ -21,3 +21,17 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
                 "status": 500,
                 "message": "C++ engine executable not found."
             }
+
+    try:
+        # Execute the C++ engine
+        result = subprocess.run(
+            [
+                cpp_engine_path,
+                resource_id,
+                start_time,
+                end_time
+            ],
+            capture_output=True,
+            text=True,
+            timeout=1
+        )
