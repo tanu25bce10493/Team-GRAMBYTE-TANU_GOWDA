@@ -10,9 +10,13 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- =========================
+         Navbar
+    ========================== -->
+
     <header>
         <nav class="navbar">
+
             <div class="logo">
                 <h2>SyncReserve AI</h2>
             </div>
@@ -23,44 +27,109 @@
                 <li><a href="#">Bookings</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+
         </nav>
     </header>
 
-    <!-- Hero -->
+    <!-- =========================
+         Hero Section
+    ========================== -->
+
     <section class="hero">
 
         <h1>Smart Campus Resource Booking</h1>
 
         <p>
-            Book labs, classrooms and resources without conflicts.
+            Book labs, classrooms and campus resources without conflicts.
         </p>
 
         <button>Book Now</button>
 
     </section>
 
-    <!-- Booking Section -->
+    <!-- =========================
+         Booking Section
+    ========================== -->
+
     <section class="booking">
 
         <h2>Book a Resource</h2>
 
+        <div class="booking-grid">
+
+            <div class="grid-header">Resource</div>
+            <div class="grid-header">9:00 AM</div>
+            <div class="grid-header">10:00 AM</div>
+            <div class="grid-header">11:00 AM</div>
+            <div class="grid-header">12:00 PM</div>
+
+            <div class="resource-name">Lab 101</div>
+            <div class="slot available">Available</div>
+            <div class="slot booked">Booked</div>
+            <div class="slot available">Available</div>
+            <div class="slot available">Available</div>
+
+            <div class="resource-name">Classroom A</div>
+            <div class="slot available">Available</div>
+            <div class="slot available">Available</div>
+            <div class="slot booked">Booked</div>
+            <div class="slot available">Available</div>
+
+        </div>
+
     </section>
 
-    <!-- Resources -->
+    <!-- =========================
+         Resources Section
+    ========================== -->
+
     <section class="resources">
 
         <h2>Available Resources</h2>
 
+        <div class="resource-container">
+
+            <div class="resource-card">
+                <h3>Lab 101</h3>
+                <p>Capacity: 40</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Lab 102</h3>
+                <p>Capacity: 30</p>
+                <p>Status: <span class="booked-text">Booked</span></p>
+                <button class="book-btn" disabled>Booked</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Classroom A</h3>
+                <p>Capacity: 60</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+            <div class="resource-card">
+                <h3>Seminar Hall</h3>
+                <p>Capacity: 120</p>
+                <p>Status: <span class="available-text">Available</span></p>
+                <button class="book-btn">Book</button>
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- Footer -->
+    <!-- =========================
+         Footer
+    ========================== -->
+
     <footer>
-
-        <p>© 2026 Team GRAMBYTE</p>
-
+        <p>&copy; 2026 Team GRAMBYTE | SyncReserve AI</p>
     </footer>
 
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
