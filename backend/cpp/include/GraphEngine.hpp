@@ -15,13 +15,13 @@ private:
 public:
     void addResource(const Resource& resource);
     bool createBooking(const Booking& booking);
-    const Resource* getResourceById(int resourceId) const;
 
     bool isResourceAvailable(
         int resourceId,
         const std::string& startTime,
         const std::string& endTime
     ) const;
+    const Resource* getResourceById(int resourceId) const;
 };
 
 #endif
