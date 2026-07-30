@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>SyncReserve AI</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -15,6 +19,7 @@
     ========================== -->
 
     <header>
+
         <nav class="navbar">
 
             <div class="logo">
@@ -29,6 +34,7 @@
             </ul>
 
         </nav>
+
     </header>
 
     <!-- =========================
@@ -90,31 +96,51 @@
         <div class="resource-container">
 
             <div class="resource-card">
+
                 <h3>Lab 101</h3>
+
                 <p>Capacity: 40</p>
+
                 <p>Status: <span class="available-text">Available</span></p>
+
                 <button class="book-btn">Book</button>
+
             </div>
 
             <div class="resource-card">
+
                 <h3>Lab 102</h3>
+
                 <p>Capacity: 30</p>
+
                 <p>Status: <span class="booked-text">Booked</span></p>
+
                 <button class="book-btn" disabled>Booked</button>
+
             </div>
 
             <div class="resource-card">
+
                 <h3>Classroom A</h3>
+
                 <p>Capacity: 60</p>
+
                 <p>Status: <span class="available-text">Available</span></p>
+
                 <button class="book-btn">Book</button>
+
             </div>
 
             <div class="resource-card">
+
                 <h3>Seminar Hall</h3>
+
                 <p>Capacity: 120</p>
+
                 <p>Status: <span class="available-text">Available</span></p>
+
                 <button class="book-btn">Book</button>
+
             </div>
 
         </div>
@@ -135,31 +161,49 @@
 
             <form id="bookingForm">
 
-                <label>Student ID</label>
-                <input type="text" placeholder="Enter Student ID" required>
+                <label for="studentId">Student ID</label>
 
-                <label>Resource</label>
+                <input
+                    id="studentId"
+                    type="text"
+                    placeholder="Enter Student ID"
+                    required
+                >
 
-                <select required>
-                    <option>Lab 101</option>
-                    <option>Lab 102</option>
-                    <option>Classroom A</option>
-                    <option>Seminar Hall</option>
+                <label for="resource">Resource</label>
+
+                <select id="resource" required>
+
+                    <option value="LAB-101">Lab 101</option>
+                    <option value="LAB-102">Lab 102</option>
+                    <option value="CLASSROOM-A">Classroom A</option>
+                    <option value="SEMINAR-HALL">Seminar Hall</option>
+
                 </select>
 
-                <label>Date</label>
-                <input type="date" required>
+                <label for="bookingDate">Date</label>
 
-                <label>Time Slot</label>
+                <input
+                    id="bookingDate"
+                    type="date"
+                    required
+                >
 
-                <select required>
-                    <option>09:00 AM</option>
-                    <option>10:00 AM</option>
-                    <option>11:00 AM</option>
-                    <option>12:00 PM</option>
+                <label for="timeSlot">Time Slot</label>
+
+                <select id="timeSlot" required>
+
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+
                 </select>
 
-                <button type="submit" class="submit-btn">
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
                     Confirm Booking
                 </button>
 
@@ -182,4 +226,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
