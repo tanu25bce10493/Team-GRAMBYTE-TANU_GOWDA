@@ -14,7 +14,7 @@ private:
 
 public:
     void addResource(const Resource& resource);
-    void addBooking(const Booking& booking);
+    bool createBooking(const Booking& booking);
 
     bool isResourceAvailable(
         int resourceId,
