@@ -259,3 +259,52 @@ footer{
 
     color:#94a3b8;
 }
+@media(max-width:768px){
+
+.nav-links{
+
+    position:absolute;
+
+    top:80px;
+
+    left:-100%;
+
+    width:100%;
+
+    background:#111827;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:30px 0;
+
+    transition:.3s;
+}
+
+.nav-links.show{
+
+    left:0;
+}
+
+.login-btn{
+
+    display:none;
+}
+
+.hamburger{
+
+    display:flex;
+}
+
+.navbar{
+
+    padding:20px;
+}
+
+.hero h1{
+
+    font-size:38px;
+}
+
+}
