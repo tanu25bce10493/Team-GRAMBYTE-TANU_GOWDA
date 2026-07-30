@@ -1,0 +1,1 @@
+This folder contains bridge file used to Python subprocess communication with the C++ engine and journal logging.
