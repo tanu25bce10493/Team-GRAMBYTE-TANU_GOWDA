@@ -5,9 +5,18 @@ void GraphEngine::addResource(const Resource& resource)
     resources.push_back(resource);
 }
 
-void GraphEngine::addBooking(const Booking& booking)
+bool GraphEngine::createBooking(const Booking& booking)
 {
+    if (!isResourceAvailable(
+            booking.resourceId,
+            booking.startTime,
+            booking.endTime))
+    {
+        return false;
+    }
+
     bookings.push_back(booking);
+    return true;
 }
 
 bool GraphEngine::isResourceAvailable(
