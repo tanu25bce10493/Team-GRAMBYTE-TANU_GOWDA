@@ -269,12 +269,18 @@ Example
 
 # 📸 Screenshots
 
-Add screenshots here
-
 - Homepage
+- <img width="1280" height="798" alt="Screenshot 2026-07-31 111039" src="https://github.com/user-attachments/assets/39699e19-958d-499f-a86a-e93f8adc1c3d" />
+
 - Booking Dashboard
+- <img width="1280" height="800" alt="Screenshot 2026-07-31 111203" src="https://github.com/user-attachments/assets/1dcdf9d4-1603-4677-93a2-4d223838d19a" />
+
 - Live Pipeline
+- <img width="1280" height="800" alt="Screenshot 2026-07-31 111146" src="https://github.com/user-attachments/assets/c88fd972-07af-4098-974f-55a5741021c6" />
+
 - Backend Terminal
+- <img width="1280" height="800" alt="Screenshot 2026-07-31 111224" src="https://github.com/user-attachments/assets/62339671-4a0e-4e03-b6b2-de8916dfe833" />
+
 
 ---
 
