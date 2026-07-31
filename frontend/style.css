@@ -433,3 +433,126 @@ footer{
     color:#60a5fa;
 
 }
+.timeline-section{
+
+    padding:80px 8%;
+
+}
+
+.timeline-container{
+
+    overflow-x:auto;
+
+    margin-top:40px;
+
+}
+
+.timeline-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:1000px;
+
+}
+
+.timeline-table th{
+
+    background:#111827;
+
+    color:#4ade80;
+
+    padding:16px;
+
+}
+
+.timeline-table td{
+
+    text-align:center;
+
+    padding:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.timeline-table tbody tr:hover{
+
+    background:#1e293b;
+
+}
+
+.free{
+
+    background:#14532d;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.free:hover{
+
+    background:#22c55e;
+
+}
+
+.reserved{
+
+    background:#ca8a04;
+
+}
+
+.busy{
+
+    background:#b91c1c;
+
+}
+
+.legend{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.legend-box{
+
+    display:inline-block;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:4px;
+
+    margin-right:8px;
+
+}
+
+.green{
+
+    background:#22c55e;
+
+}
+
+.yellow{
+
+    background:#eab308;
+
+}
+
+.red{
+
+    background:#ef4444;
+
+}
