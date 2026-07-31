@@ -19,7 +19,49 @@ document.querySelectorAll(".book-resource-btn:not(:disabled)")
 
     button.addEventListener("click", () => {
 
-        alert("Booking form will be implemented in the next commit.");
+        const modal = document.getElementById("bookingModal");
+
+const closeBtn = document.querySelector(".close-btn");
+
+document
+.querySelectorAll(".book-resource-btn:not(:disabled)")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+modal.classList.add("show");
+
+});
+
+});
+
+closeBtn.onclick=()=>{
+
+modal.classList.remove("show");
+
+};
+
+window.onclick=(e)=>{
+
+if(e.target===modal){
+
+modal.classList.remove("show");
+
+}
+
+};
+
+document
+.getElementById("bookingForm")
+.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert("Booking request prepared successfully!");
+
+modal.classList.remove("show");
+
+});
 
     });
 
