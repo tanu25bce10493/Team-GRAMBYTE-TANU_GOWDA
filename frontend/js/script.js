@@ -198,15 +198,17 @@ bookingForm.addEventListener("submit",async(e)=>{
 
             },
 
-            body:JSON.stringify({
+            body: JSON.stringify({
 
-                resource_id:resource,
+    student_id: studentId,
 
-                start_time:startTime,
+    resource_id: resource,
 
-                end_time:endTime
+    start_time: startTime,
 
-            })
+    end_time: endTime
+
+})
 
         });
 
