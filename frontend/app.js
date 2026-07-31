@@ -1,27 +1,26 @@
+// Mobile Navigation
 const hamburger = document.querySelector(".hamburger");
-
 const navLinks = document.querySelector(".nav-links");
 
 hamburger.addEventListener("click", () => {
-
     navLinks.classList.toggle("show");
-
 });
 
+// Navbar Shadow
 window.addEventListener("scroll", () => {
+    document
+        .querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 20);
+});
 
-    const navbar = document.querySelector(".navbar");
+// Temporary Booking Button Demo
+document.querySelectorAll(".book-resource-btn:not(:disabled)")
+.forEach(button => {
 
-    if(window.scrollY > 20){
+    button.addEventListener("click", () => {
 
-        navbar.classList.add("scrolled");
+        alert("Booking form will be implemented in the next commit.");
 
-    }
-
-    else{
-
-        navbar.classList.remove("scrolled");
-
-    }
+    });
 
 });
