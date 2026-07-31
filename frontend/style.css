@@ -556,3 +556,144 @@ footer{
     background:#ef4444;
 
 }
+.resources-section{
+
+    padding:80px 8%;
+
+}
+
+.resource-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+    margin-top:45px;
+
+}
+
+.resource-item{
+
+    background:rgba(30,41,59,.9);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+}
+
+.resource-item:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+}
+
+.resource-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.resource-icon{
+
+    font-size:42px;
+
+}
+
+.resource-type{
+
+    color:#94a3b8;
+
+    margin:10px 0 20px;
+
+}
+
+.resource-details{
+
+    list-style:none;
+
+    line-height:2;
+
+    color:#e2e8f0;
+
+    margin-bottom:25px;
+
+}
+
+.resource-status{
+
+    padding:6px 14px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.available-badge{
+
+    background:#14532d;
+
+    color:#4ade80;
+
+}
+
+.occupied-badge{
+
+    background:#7f1d1d;
+
+    color:#f87171;
+
+}
+
+.book-resource-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4ade80;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.book-resource-btn:hover:not(:disabled){
+
+    transform:scale(1.02);
+
+}
+
+.book-resource-btn:disabled{
+
+    background:#475569;
+
+    color:#cbd5e1;
+
+    cursor:not-allowed;
+
+}
