@@ -1,3 +1,9 @@
+<!-- ========================================================= -->
+<!-- SyncReserve AI -->
+<!-- index.html -->
+<!-- PART 1 -->
+<!-- ========================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,222 +14,922 @@
 
     <title>SyncReserve AI</title>
 
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <!-- =========================
-         Navbar
-    ========================== -->
+    <!-- ===================================================== -->
+    <!-- BACKGROUND -->
+    <!-- ===================================================== -->
+
+    <div class="background-grid"></div>
+    <div class="background-glow glow1"></div>
+    <div class="background-glow glow2"></div>
+
+    <!-- ===================================================== -->
+    <!-- NAVBAR -->
+    <!-- ===================================================== -->
 
     <header>
 
-        <nav class="navbar">
+        <div class="logo">
 
-            <div class="logo">
-                <h2>SyncReserve AI</h2>
-            </div>
+            <i class="fa-solid fa-microchip"></i>
 
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Bookings</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+            <span>SyncReserve AI</span>
+
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#architecture">Architecture</a>
+
+            <a href="#booking">Booking</a>
+
+            <a href="#dashboard">Dashboard</a>
 
         </nav>
 
+        <button class="primary-btn">
+
+            Launch Demo
+
+        </button>
+
     </header>
 
-    <!-- =========================
-         Hero Section
-    ========================== -->
+    <!-- ===================================================== -->
+    <!-- HERO -->
+    <!-- ===================================================== -->
 
-    <section class="hero">
+    <section class="hero" id="home">
 
-        <h1>Smart Campus Resource Booking</h1>
+        <div class="hero-left">
 
-        <p>
-            Book labs, classrooms and campus resources without conflicts.
-        </p>
+            <p class="badge">
 
-        <button class="hero-book-btn">Book Now</button>
+                <i class="fa-solid fa-bolt"></i>
 
-    </section>
+                High Performance Scheduling Engine
 
-    <!-- =========================
-         Booking Section
-    ========================== -->
+            </p>
 
-    <section class="booking">
+            <h1>
 
-        <h2>Book a Resource</h2>
+                Intelligent Resource Scheduling
 
-        <div class="booking-grid">
+                <span>Powered by C++</span>
 
-            <div class="grid-header">Resource</div>
-            <div class="grid-header">9:00 AM</div>
-            <div class="grid-header">10:00 AM</div>
-            <div class="grid-header">11:00 AM</div>
-            <div class="grid-header">12:00 PM</div>
+            </h1>
 
-            <div class="resource-name">Lab 101</div>
-            <div class="slot available">Available</div>
-            <div class="slot booked">Booked</div>
-            <div class="slot available">Available</div>
-            <div class="slot available">Available</div>
+            <p class="hero-text">
 
-            <div class="resource-name">Classroom A</div>
-            <div class="slot available">Available</div>
-            <div class="slot available">Available</div>
-            <div class="slot booked">Booked</div>
-            <div class="slot available">Available</div>
+                SyncReserve AI eliminates scheduling conflicts using a
+                high-speed graph-based scheduling engine written in C++,
+                connected through FastAPI and Python for seamless
+                real-time campus resource management.
 
-        </div>
+            </p>
 
-    </section>
+            <div class="hero-buttons">
 
-    <!-- =========================
-         Resources Section
-    ========================== -->
+                <button class="primary-btn">
 
-    <section class="resources">
+                    Book Resource
 
-        <h2>Available Resources</h2>
-
-        <div class="resource-container">
-
-            <div class="resource-card">
-
-                <h3>Lab 101</h3>
-
-                <p>Capacity: 40</p>
-
-                <p>Status: <span class="available-text">Available</span></p>
-
-                <button class="book-btn">Book</button>
-
-            </div>
-
-            <div class="resource-card">
-
-                <h3>Lab 102</h3>
-
-                <p>Capacity: 30</p>
-
-                <p>Status: <span class="booked-text">Booked</span></p>
-
-                <button class="book-btn" disabled>Booked</button>
-
-            </div>
-
-            <div class="resource-card">
-
-                <h3>Classroom A</h3>
-
-                <p>Capacity: 60</p>
-
-                <p>Status: <span class="available-text">Available</span></p>
-
-                <button class="book-btn">Book</button>
-
-            </div>
-
-            <div class="resource-card">
-
-                <h3>Seminar Hall</h3>
-
-                <p>Capacity: 120</p>
-
-                <p>Status: <span class="available-text">Available</span></p>
-
-                <button class="book-btn">Book</button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         Booking Modal
-    ========================== -->
-
-    <div id="bookingModal" class="modal">
-
-        <div class="modal-content">
-
-            <span class="close">&times;</span>
-
-            <h2>Book Resource</h2>
-
-            <form id="bookingForm">
-
-                <label for="studentId">Student ID</label>
-
-                <input
-                    id="studentId"
-                    type="text"
-                    placeholder="Enter Student ID"
-                    required
-                >
-
-                <label for="resource">Resource</label>
-
-                <select id="resource" required>
-
-                    <option value="LAB-101">Lab 101</option>
-                    <option value="LAB-102">Lab 102</option>
-                    <option value="CLASSROOM-A">Classroom A</option>
-                    <option value="SEMINAR-HALL">Seminar Hall</option>
-
-                </select>
-
-                <label for="bookingDate">Date</label>
-
-                <input
-                    id="bookingDate"
-                    type="date"
-                    required
-                >
-
-                <label for="timeSlot">Time Slot</label>
-
-                <select id="timeSlot" required>
-
-                    <option value="09:00">09:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-
-                </select>
-
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Confirm Booking
                 </button>
 
-            </form>
+                <button class="secondary-btn">
+
+                    View Architecture
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="glass-card hero-card">
+
+                <div class="status">
+
+                    <span class="green-dot"></span>
+
+                    Engine Online
+
+                </div>
+
+                <div class="metric">
+
+                    <h2 id="latencyCard">
+
+                        4.3 ms
+
+                    </h2>
+
+                    <p>Average Response</p>
+
+                </div>
+
+                <div class="metric">
+
+                    <h2 id="bookingCounter">
+
+                        0
+
+                    </h2>
+
+                    <p>Total Bookings</p>
+
+                </div>
+
+                <div class="metric">
+
+                    <h2>
+
+                        FastAPI
+
+                    </h2>
+
+                    <p>Gateway Active</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- PROBLEM -->
+    <!-- ===================================================== -->
+
+    <section class="problem-section">
+
+        <h2>
+
+            Why Traditional Booking Systems Fail
+
+        </h2>
+
+        <p>
+
+            Most reservation systems rely heavily on centralized databases,
+            resulting in locking, race conditions and slow conflict resolution.
+
+        </p>
+
+        <div class="problem-grid">
+
+            <div class="glass-card">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <h3>
+
+                    Database Locking
+
+                </h3>
+
+                <p>
+
+                    Multiple users requesting the same resource
+                    create unnecessary locking and delays.
+
+                </p>
+
+            </div>
+
+            <div class="glass-card">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                <h3>
+
+                    Double Booking
+
+                </h3>
+
+                <p>
+
+                    Poor scheduling algorithms often allow
+                    conflicting reservations.
+
+                </p>
+
+            </div>
+
+            <div class="glass-card">
+
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <h3>
+
+                    Slow Validation
+
+                </h3>
+
+                <p>
+
+                    SQL queries become slower as
+                    concurrent requests increase.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- ARCHITECTURE -->
+    <!-- ===================================================== -->
+
+    <section class="architecture" id="architecture">
+
+        <h2>
+
+            Live System Architecture
+
+        </h2>
+
+        <p>
+
+            Every booking request travels through this pipeline.
+
+        </p>
+
+        <div class="pipeline">
+
+            <div class="pipeline-box" id="step1">
+
+                <i class="fa-solid fa-display"></i>
+
+                <h4>
+
+                    Frontend
+
+                </h4>
+
+            </div>
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <div class="pipeline-box" id="step2">
+
+                <i class="fa-solid fa-server"></i>
+
+                <h4>
+
+                    FastAPI
+
+                </h4>
+
+            </div>
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <div class="pipeline-box" id="step3">
+
+                <i class="fa-brands fa-python"></i>
+
+                <h4>
+
+                    Python Bridge
+
+                </h4>
+
+            </div>
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <div class="pipeline-box" id="step4">
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <h4>
+
+                    C++ Engine
+
+                </h4>
+
+            </div>
+
+            <div class="arrow">
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </div>
+
+            <div class="pipeline-box" id="step5">
+
+                <i class="fa-solid fa-code"></i>
+
+                <h4>
+
+                    JSON Response
+
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<section class="booking-section" id="booking">
+
+    <div class="booking-left">
+
+        <h2>
+
+            Book a Resource
+
+        </h2>
+
+        <p>
+
+            Submit a booking request to the FastAPI gateway.
+            The request is validated by the C++ scheduling engine
+            and returns a real-time response.
+
+        </p>
+
+        <form id="bookingForm">
+
+            <div class="input-group">
+
+                <label>
+
+                    Student ID
+
+                </label>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="22BCE0000"
+                    required>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Resource
+
+                </label>
+
+                <select id="resource">
+
+                    <option value="LAB-101">LAB-101</option>
+
+                    <option value="LAB-102">LAB-102</option>
+
+                    <option value="LAB-103">LAB-103</option>
+
+                    <option value="CLASSROOM-A">CLASSROOM-A</option>
+
+                    <option value="CLASSROOM-B">CLASSROOM-B</option>
+
+                    <option value="SEMINAR-HALL">SEMINAR-HALL</option>
+
+                </select>
+
+            </div>
+
+            <div class="double-input">
+
+                <div class="input-group">
+
+                    <label>
+
+                        Date
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="bookingDate"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        Time Slot
+
+                    </label>
+
+                    <select id="timeSlot">
+
+                        <option value="09:00-10:00">09:00 - 10:00</option>
+
+                        <option value="10:00-11:00">10:00 - 11:00</option>
+
+                        <option value="11:00-12:00">11:00 - 12:00</option>
+
+                        <option value="12:00-13:00">12:00 - 13:00</option>
+
+                        <option value="14:00-15:00">14:00 - 15:00</option>
+
+                        <option value="15:00-16:00">15:00 - 16:00</option>
+
+                        <option value="16:00-17:00">16:00 - 17:00</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Purpose
+
+                </label>
+
+                <input
+                    type="text"
+                    id="purpose"
+                    placeholder="Project Discussion">
+
+            </div>
+
+            <button
+                type="submit"
+                class="primary-btn full-width">
+
+                Book Resource
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="booking-right">
+
+        <div class="glass-card execution-card">
+
+            <h3>
+
+                Live Execution Pipeline
+
+            </h3>
+
+            <div class="execution-list">
+
+                <div class="execution-step" id="exec1">
+
+                    <span>1</span>
+
+                    Payload Created
+
+                </div>
+
+                <div class="execution-step" id="exec2">
+
+                    <span>2</span>
+
+                    POST → FastAPI
+
+                </div>
+
+                <div class="execution-step" id="exec3">
+
+                    <span>3</span>
+
+                    Python Bridge
+
+                </div>
+
+                <div class="execution-step" id="exec4">
+
+                    <span>4</span>
+
+                    Launch SyncReserveAI.exe
+
+                </div>
+
+                <div class="execution-step" id="exec5">
+
+                    <span>5</span>
+
+                    Graph Validation
+
+                </div>
+
+                <div class="execution-step" id="exec6">
+
+                    <span>6</span>
+
+                    JSON Response
+
+                </div>
+
+                <div class="execution-step" id="exec7">
+
+                    <span>7</span>
+
+                    Booking Complete
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- =========================
-         Footer
-    ========================== -->
+</section>
 
-    <footer>
+<!-- ===================================================== -->
+<!-- PERFORMANCE DASHBOARD -->
+<!-- ===================================================== -->
 
-        <p>&copy; 2026 Team GRAMBYTE | SyncReserve AI</p>
+<section class="dashboard-section" id="dashboard">
 
-    </footer>
+    <h2>
 
-    <script src="js/script.js"></script>
+        Performance Dashboard
+
+    </h2>
+
+    <p>
+
+        Live statistics from the SyncReserve AI backend.
+
+    </p>
+
+    <div class="dashboard-grid">
+
+        <div class="glass-card stat-card">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <h3 id="latencyValue">
+
+                4.3 ms
+
+            </h3>
+
+            <p>
+
+                Average Latency
+
+            </p>
+
+        </div>
+
+        <div class="glass-card stat-card">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h3 id="bookingCount">
+
+                0
+
+            </h3>
+
+            <p>
+
+                Successful Bookings
+
+            </p>
+
+        </div>
+
+        <div class="glass-card stat-card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3 id="conflictCount">
+
+                0
+
+            </h3>
+
+            <p>
+
+                Conflicts Prevented
+
+            </p>
+
+        </div>
+
+        <div class="glass-card stat-card">
+
+            <i class="fa-solid fa-server"></i>
+
+            <h3>
+
+                ONLINE
+
+            </h3>
+
+            <p>
+
+                Backend Status
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- LIVE TERMINAL -->
+<!-- ===================================================== -->
+
+<section class="terminal-section">
+
+    <h2>
+
+        Backend Activity
+
+    </h2>
+
+    <div class="terminal-window">
+
+        <div class="terminal-header">
+
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+
+            <p>
+
+                SyncReserve Backend
+
+            </p>
+
+        </div>
+
+        <pre id="terminal">
+
+Waiting for booking request...
+
+        </pre>
+
+    </div>
+
+</section>
+
+<section class="benchmark-section">
+
+    <h2>
+
+        Performance Benchmark
+
+    </h2>
+
+    <p>
+
+        Demonstrating why SyncReserve AI uses a dedicated C++ scheduling engine
+        instead of traditional database locking.
+
+    </p>
+
+    <div class="benchmark-grid">
+
+        <div class="glass-card benchmark-card">
+
+            <h3>
+
+                Traditional SQL
+
+            </h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    Lock Contention
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    Higher Query Latency
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    Poor Concurrent Scaling
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    Frequent Double Booking Checks
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="glass-card benchmark-card highlight">
+
+            <h3>
+
+                SyncReserve AI
+
+            </h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Graph-based Validation
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    C++ Execution Engine
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Fast Conflict Detection
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    FastAPI Integration
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- TECHNOLOGIES -->
+<!-- ===================================================== -->
+
+<section class="tech-section">
+
+    <h2>
+
+        Technology Stack
+
+    </h2>
+
+    <div class="tech-grid">
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-brands fa-html5"></i>
+
+            <p>HTML5</p>
+
+        </div>
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-brands fa-css3-alt"></i>
+
+            <p>CSS3</p>
+
+        </div>
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-brands fa-js"></i>
+
+            <p>JavaScript</p>
+
+        </div>
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-brands fa-python"></i>
+
+            <p>Python</p>
+
+        </div>
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-solid fa-server"></i>
+
+            <p>FastAPI</p>
+
+        </div>
+
+        <div class="glass-card tech-card">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            <p>C++20</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer>
+
+    <h2>
+
+        SyncReserve AI
+
+    </h2>
+
+    <p>
+
+        High Performance Campus Resource Scheduling Engine
+
+    </p>
+
+    <p>
+
+        Built using C++ • Python • FastAPI • HTML • CSS • JavaScript
+
+    </p>
+
+    <p>
+
+        Team GRAMBYTE | Summer of CodeFest
+
+    </p>
+
+</footer>
+
+<!-- ===================================================== -->
+<!-- TOAST -->
+<!-- ===================================================== -->
+
+<div id="toast" class="toast">
+
+    Booking Successful
+
+</div>
+
+<!-- ===================================================== -->
+<!-- LOADER -->
+<!-- ===================================================== -->
+
+<div id="loader" class="loader hidden">
+
+    <div class="spinner"></div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<script src="js/script.js"></script>
 
 </body>
 
