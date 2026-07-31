@@ -3,7 +3,33 @@ import json
 import os
 from typing import Dict, Any
 
-from .logger import log_booking
+from .logger import log_booking, load_bookings
+
+
+def has_conflict(resource_id: str, start_time: str, end_time: str) -> bool:
+    """
+    Check if the requested booking overlaps an existing booking.
+    """
+
+    bookings = load_bookings()
+
+    for booking in bookings:
+
+        if booking["resource_id"] != resource_id:
+            continue
+
+        existing_start = booking["start_time"]
+        existing_end = booking["end_time"]
+
+        # Overlap exists if NOT (new ends before existing starts OR new starts after existing ends)
+        if not (
+            end_time <= existing_start
+            or
+            start_time >= existing_end
+        ):
+            return True
+
+    return False
 
 
 def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str, Any]:
@@ -26,6 +52,18 @@ def run_cpp_engine(resource_id: str, start_time: str, end_time: str) -> Dict[str
             "success": False,
             "status": 500,
             "message": f"C++ engine executable not found: {cpp_engine_path}"
+        }
+
+    # -----------------------------------------------------
+    # Check existing journal before calling C++
+    # -----------------------------------------------------
+
+    if has_conflict(resource_id, start_time, end_time):
+
+        return {
+            "success": False,
+            "status": 409,
+            "message": "Resource already booked for this time slot."
         }
 
     try:
